@@ -9,7 +9,6 @@ GO
 USE SchoolDB;
 GO
 
-/* ---------- TABLES ---------- */
 CREATE TABLE Departments (
     DepartmentID   INT PRIMARY KEY,
     DepartmentName NVARCHAR(60) NOT NULL
@@ -19,7 +18,7 @@ CREATE TABLE Students (
     StudentID   INT PRIMARY KEY,
     FirstName   NVARCHAR(50) NOT NULL,
     LastName    NVARCHAR(50) NOT NULL,
-    Faculty     NVARCHAR(50) NOT NULL,   -- Science, Engineering, ...
+    Faculty     NVARCHAR(50) NOT NULL,   
     Programme   NVARCHAR(80) NOT NULL,
     YearOfStudy INT NOT NULL CHECK (YearOfStudy BETWEEN 1 AND 6)
 );
@@ -43,7 +42,6 @@ CREATE TABLE Marks (
 );
 GO
 
-/* ---------- SAMPLE DATA ---------- */
 INSERT INTO Departments VALUES
  (1,'Finance'),(2,'Computer Science'),(3,'Civil Engineering'),(4,'Biology'),(5,'Administration');
 
@@ -72,7 +70,6 @@ INSERT INTO Marks (StudentID,CourseCode,Mark,Semester,AcademicYear) VALUES
  (1006,'CHEM201',67,2,2024),(1007,'ENG101',45,2,2023);
 GO
 
-/* ---------- QUERIES ---------- */
 
 -- a) all students from Science faculty
 SELECT * FROM Students WHERE Faculty = 'Science';
